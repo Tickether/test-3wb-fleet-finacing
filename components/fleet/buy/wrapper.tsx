@@ -388,7 +388,7 @@ export function Wrapper() {
                                     <Switch checked={!isFractionsMode} onCheckedChange={() => {
                                         setIsFractionsMode(!isFractionsMode);
                                         setFractions(1);
-                                        setAmount(1);
+                                        setAmount(100);
                                     }} id="fractions-mode" />
                                     <Label htmlFor="single-mode">
                                         {isFractionsMode ? <RefreshCw className="h-6 w-6 text-muted-foreground"/> : <RefreshCw className="h-7 w-7 text-yellow-600"/>}
