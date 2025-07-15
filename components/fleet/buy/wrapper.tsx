@@ -40,7 +40,7 @@ export function Wrapper() {
     console.log(chainId)
 
     
-    const [amount, setAmount] = useState(1)
+    const [amount, setAmount] = useState(100)
     const [fractions, setFractions] = useState(1)
     const [loadingCeloUSD, setLoadingCeloUSD] = useState(false)
     const [isFractionsMode, setIsFractionsMode] = useState(true)
