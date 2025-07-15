@@ -274,7 +274,7 @@ export function Wrapper() {
                                         size="icon"
                                         className="h-8 w-8 shrink-0 rounded-full"
                                         onClick={isFractionsMode ? decreaseFractions : decrease}
-                                        disabled={isFractionsMode ? fractions <= 1 : amount <= 1}
+                                        disabled={isFractionsMode ? fractions <= 1 : amount <= 100}
 
                                     >
                                         <Minus />
