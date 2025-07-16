@@ -60,8 +60,8 @@ export function Wrapper() {
 
 
     //increase and decrease amount...
-    const increase = () => setAmount((prev) => prev + 1);
-    const decrease = () => setAmount((prev) => (prev > 1 ? prev - 1 : 1));
+    const increase = () => setAmount((prev) => prev + 10);
+    const decrease = () => setAmount((prev) => (prev > 1 ? prev - 10 : 1));
     //..and fractions
     const increaseFractions = () => {
         setFractions((prev) => {
