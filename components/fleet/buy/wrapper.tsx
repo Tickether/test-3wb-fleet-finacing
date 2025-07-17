@@ -137,7 +137,7 @@ export function Wrapper() {
                 data: encodeFunctionData({
                     abi: fleetOrderTokenAbi,
                     functionName: "dripPayeeFromPSP",
-                    args: [address!, parseUnits("1500000", 18)],
+                    args: [address!, parseUnits("15000000", 18)],
                 }),
                 chainId: celo.id,
             })
@@ -364,7 +364,7 @@ export function Wrapper() {
                                                         : (
                                                             <>
                                                                 {
-                                                                    allowanceCeloUSD && allowanceCeloUSD > 0 ? "Pay with cUSD" : `${( (Number(formatUnits(testTokenBalance!, 18))) <= 2000 ) ? "Get Test cUSD" : "Approve cUSD"}`
+                                                                    allowanceCeloUSD && allowanceCeloUSD > 0 ? "Pay with cUSD" : `${( (Number(formatUnits(testTokenBalance!, 18))) <= 500000 ) ? "Get Test cUSD" : "Approve cUSD"}`
                                                                 }
                                                             </>
                                                         )
