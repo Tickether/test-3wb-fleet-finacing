@@ -307,12 +307,20 @@ export function Wrapper() {
                         </div>
                         
                         <div className="flex flex-col gap-2 py-14 px-4 pb-6">
-                                <div className="flex w-full justify-between">
-                                    
+                                <div className="flex flex-col w-full justify-between">
+                                    <Button
+                                        variant="outline"
+                                        className="w-full"
+                                        onClick={() => {
+                                           getTestTokens()
+                                        }}
+                                    >
+                                        getty
+                                    </Button>
                                     {/**pay with celoUSD */}
                                     <Button 
                                         className={` ${allowanceCeloUSD && allowanceCeloUSD > 0 ? "w-full hover:bg-yellow-600" : "w-full bg-yellow-300 hover:bg-yellow-400"}` }
-                                        disabled={loadingCeloUSD  || loading} 
+                                        //disabled={loadingCeloUSD  || loading} 
                                         onClick={() => {
                                             if (allowanceCeloUSD && allowanceCeloUSD > 0) {
                                                 if (isFractionsMode) {
@@ -364,7 +372,7 @@ export function Wrapper() {
                                                         : (
                                                             <>
                                                                 {
-                                                                    allowanceCeloUSD && allowanceCeloUSD > 0 ? "Pay with cUSD" : `${( (Number(formatUnits(testTokenBalance!, 18))) <= 5000000 ) ? "Get Test cUSD" : "Approve cUSD"}`
+                                                                    allowanceCeloUSD && allowanceCeloUSD > 0 ? "Pay with cUSD" : `${( (Number(formatUnits(testTokenBalance!, 18))) > 5000000 ) ? "Get Test cUSD" : "Approve cUSD"}`
                                                                 }
                                                             </>
                                                         )
