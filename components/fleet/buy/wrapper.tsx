@@ -322,7 +322,7 @@ export function Wrapper() {
                                                 }
                                             } else {
 
-                                                if ( (Number(formatUnits(testTokenBalance!, 18))) <= 2000 ) {
+                                                if ( (Number(formatUnits(testTokenBalance!, 18))) <= 5000000 ) {
                                                     getTestTokens()
                                                 } else {
                                                     if (!isUserReferredToProvider  || (Number(formatUnits(allowanceCeloUSD!, 18))) === 0) {
@@ -364,7 +364,7 @@ export function Wrapper() {
                                                         : (
                                                             <>
                                                                 {
-                                                                    allowanceCeloUSD && allowanceCeloUSD > 0 ? "Pay with cUSD" : `${( (Number(formatUnits(testTokenBalance!, 18))) <= 500000 ) ? "Get Test cUSD" : "Approve cUSD"}`
+                                                                    allowanceCeloUSD && allowanceCeloUSD > 0 ? "Pay with cUSD" : `${( (Number(formatUnits(testTokenBalance!, 18))) <= 5000000 ) ? "Get Test cUSD" : "Approve cUSD"}`
                                                                 }
                                                             </>
                                                         )
