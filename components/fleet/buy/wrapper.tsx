@@ -190,7 +190,7 @@ export function Wrapper() {
                     description: `You can now view your ${amount > 1 ? "3-Wheelers" : " 3-Wheeler"} in your fleet`,
                 })
                 setLoadingCeloUSD(false)
-                router.push("/fleet")
+                //router.push("/fleet")
             }
         } catch (error) {
             console.log(error)
@@ -230,7 +230,7 @@ export function Wrapper() {
                 })
 
                 setLoadingCeloUSD(false)
-                router.push("/fleet")
+                //router.push("/fleet")
             }
         } catch (error) {
             console.log(error)
