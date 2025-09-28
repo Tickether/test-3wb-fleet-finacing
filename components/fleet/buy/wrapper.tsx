@@ -25,7 +25,7 @@ import { celo, optimism } from "viem/chains";
 import { toast } from "sonner";
 import { useQueryClient } from "@tanstack/react-query";
 import { divviAbi } from "@/utils/abis/divvi";
-import { useDivvi } from "@/hooks/useDivvi";
+import { useApprove } from "@/hooks/useApprove";
 import { useSendTransaction } from "wagmi";
 import { publicClient } from "@/utils/client";
 import { fleetOrderTokenAbi } from "@/utils/abis/fleetOrderToken";
@@ -55,7 +55,7 @@ export function Wrapper() {
     const { data: blockNumber } = useBlockNumber({ watch: true }) 
 
     const { sendTransactionAsync } = useSendTransaction();
-    const { registerUser, loading } = useDivvi()
+    const { approve, loadingApproval } = useApprove()
 
 
 
@@ -334,7 +334,7 @@ export function Wrapper() {
                                                     getTestTokens()
                                                 } else {
                                                     if (!isUserReferredToProvider  || (Number(formatUnits(allowanceCeloUSD!, 18))) === 0) {
-                                                        registerUser(address!, fleetOrderToken)
+                                                        approve(address!, fleetOrderToken)
                                                     } else {
                                                         toast.error("Already approved!", {
                                                             description: "You are have already approved & registered to a provider",
@@ -346,7 +346,7 @@ export function Wrapper() {
                                         }}
                                     >
                                         {
-                                            loadingCeloUSD || loading
+                                            loadingCeloUSD || loadingApproval
                                             ? (
                                                 <>
                                                     <motion.div
